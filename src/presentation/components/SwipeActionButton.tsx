@@ -10,8 +10,7 @@
 
 import React from 'react';
 import { StyleSheet, TouchableOpacity, View, type StyleProp, type ViewStyle } from 'react-native';
-import { AtomicText, useAppDesignTokens } from '@umituz/react-native-design-system';
-import { Icon } from '@umituz/react-native-design-system';
+import { AtomicText, useAppDesignTokens, Icon } from '@umituz/react-native-design-system';
 import { HapticService } from '@umituz/react-native-haptics';
 import type { SwipeActionConfig } from '../../domain/entities/SwipeAction';
 import { SwipeActionUtils } from '../../domain/entities/SwipeAction';

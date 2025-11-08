@@ -8,7 +8,7 @@
  * @layer domain/entities
  */
 
-import type { IconName } from '@umituz/react-native-design-system';
+import type { IconName } from '@umituz/react-native-icon';
 
 /**
  * Pre-built swipe action types
