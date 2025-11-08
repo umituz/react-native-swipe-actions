@@ -12,7 +12,7 @@ import React from 'react';
 import { StyleSheet, TouchableOpacity, View, type StyleProp, type ViewStyle } from 'react-native';
 import { AtomicText, useAppDesignTokens } from '@umituz/react-native-design-system';
 import { Icon } from '@umituz/react-native-design-system';
-import * as Haptics from 'expo-haptics';
+import { HapticService } from '@umituz/react-native-haptics';
 import type { SwipeActionConfig } from '../../domain/entities/SwipeAction';
 import { SwipeActionUtils } from '../../domain/entities/SwipeAction';
 
@@ -75,11 +75,11 @@ export const SwipeActionButton: React.FC<SwipeActionButtonProps> = ({
     if (enableHaptics) {
       const intensity = SwipeActionUtils.getHapticsIntensity(action);
       if (intensity === 'Light') {
-        await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+        await HapticService.impact('Light');
       } else if (intensity === 'Medium') {
-        await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+        await HapticService.impact('Medium');
       } else {
-        await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
+        await HapticService.impact('Heavy');
       }
     }
 
