@@ -67,7 +67,7 @@ export const SwipeActionButton: React.FC<SwipeActionButtonProps> = ({
   const enableHaptics = action.enableHaptics !== false;
 
   // Get background color from theme or custom
-  const backgroundColor = customColor || (colorKey ? tokens.colors[colorKey as keyof typeof tokens.colors] as string : tokens.colors.primary);
+  const backgroundColor = customColor || (colorKey ? (tokens.colors[colorKey as keyof typeof tokens.colors] as string) : tokens.colors.primary);
 
   const handlePress = async () => {
     // Trigger haptic feedback
@@ -104,7 +104,7 @@ export const SwipeActionButton: React.FC<SwipeActionButtonProps> = ({
     >
       <View style={styles.content}>
         <Icon
-          name={icon}
+          name={icon as string}
           customSize={24}
           customColor="#FFFFFF"
         />
