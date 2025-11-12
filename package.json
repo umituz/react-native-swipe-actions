@@ -1,6 +1,6 @@
 {
   "name": "@umituz/react-native-swipe-actions",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "iOS Mail-style swipe-to-reveal actions for React Native list items with pre-built actions, haptic feedback, and smooth animations",
   "main": "./src/index.ts",
   "types": "./src/index.ts",
@@ -27,7 +27,7 @@
   "peerDependencies": {
     "@umituz/react-native-design-system": "*",
     "@umituz/react-native-haptics": "*",
-    "@umituz/react-native-icon": "*",
+    "@umituz/react-native-design-system-atoms": "*",
     "react": ">=18.2.0",
     "react-native": ">=0.74.0",
     "react-native-gesture-handler": ">=2.16.0",
