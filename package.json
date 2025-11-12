@@ -39,7 +39,7 @@
     "@umituz/react-native-design-system": "^1.5.28",
     "@umituz/react-native-haptics": "latest",
     "@umituz/react-native-icon": "latest",
-    "@umituz/react-native-theme": "latest",
+    "@umituz/react-native-design-system-theme": "latest",
     "react": "^18.2.0",
     "react-native": "^0.74.0",
     "react-native-gesture-handler": "~2.16.1",
