@@ -10,7 +10,9 @@
 
 import React from 'react';
 import { StyleSheet, TouchableOpacity, View, type StyleProp, type ViewStyle } from 'react-native';
-import { AtomicText, useAppDesignTokens, Icon } from '@umituz/react-native-design-system';
+import { AtomicText } from '@umituz/react-native-design-system-atoms';
+import { useAppDesignTokens } from '@umituz/react-native-design-system-theme';
+import { Ionicons } from '@expo/vector-icons';
 import { HapticService } from '@umituz/react-native-haptics';
 import type { SwipeActionConfig } from '../../domain/entities/SwipeAction';
 import { SwipeActionUtils } from '../../domain/entities/SwipeAction';
@@ -103,10 +105,10 @@ export const SwipeActionButton: React.FC<SwipeActionButtonProps> = ({
       activeOpacity={0.7}
     >
       <View style={styles.content}>
-        <Icon
-          name={icon as string}
-          customSize={24}
-          customColor="#FFFFFF"
+        <Ionicons
+          name={icon as any}
+          size={24}
+          color="#FFFFFF"
         />
         <AtomicText
           type="bodySmall"
