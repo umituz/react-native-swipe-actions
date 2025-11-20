@@ -63,10 +63,22 @@ export const SwipeActionButton: React.FC<SwipeActionButtonProps> = ({
 
   // Get action properties
   const label = SwipeActionUtils.getLabel(action);
-  const icon = SwipeActionUtils.getIcon(action);
+  const iconName = SwipeActionUtils.getIcon(action);
   const colorKey = SwipeActionUtils.getColorKey(action);
   const customColor = action.color;
   const enableHaptics = action.enableHaptics !== false;
+
+  // Map Lucide icon names to Ionicons names
+  const iconMap: Record<string, string> = {
+    'Trash2': 'trash-outline',
+    'Archive': 'archive-outline',
+    'Pencil': 'pencil-outline',
+    'Share2': 'share-outline',
+    'Heart': 'heart-outline',
+    'MoveHorizontal': 'ellipsis-horizontal-outline',
+  };
+  
+  const icon = iconMap[iconName] || 'ellipsis-horizontal-outline';
 
   // Get background color from theme or custom
   const backgroundColor = customColor || (colorKey ? (tokens.colors[colorKey as keyof typeof tokens.colors] as string) : tokens.colors.primary);
