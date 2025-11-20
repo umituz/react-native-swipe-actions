@@ -72,13 +72,19 @@ export const SwipeActionButton: React.FC<SwipeActionButtonProps> = ({
   const iconMap: Record<string, string> = {
     'Trash2': 'trash-outline',
     'Archive': 'archive-outline',
-    'Pencil': 'pencil-outline',
+    'Pencil': 'create-outline',
     'Share2': 'share-outline',
     'Heart': 'heart-outline',
     'MoveHorizontal': 'ellipsis-horizontal-outline',
   };
   
-  const icon = iconMap[iconName] || 'ellipsis-horizontal-outline';
+  // Convert iconName to string and map to Ionicons name
+  const icon = iconMap[String(iconName)] || 'ellipsis-horizontal-outline';
+  
+  /* eslint-disable-next-line no-console */
+  if (__DEV__ && !iconMap[String(iconName)]) {
+    console.warn(`[SwipeActionButton] Icon mapping not found for: ${iconName}, using default`);
+  }
 
   // Get background color from theme or custom
   const backgroundColor = customColor || (colorKey ? (tokens.colors[colorKey as keyof typeof tokens.colors] as string) : tokens.colors.primary);
