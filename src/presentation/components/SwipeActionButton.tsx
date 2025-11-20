@@ -10,9 +10,8 @@
 
 import React from 'react';
 import { StyleSheet, TouchableOpacity, View, type StyleProp, type ViewStyle } from 'react-native';
-import { AtomicText } from '@umituz/react-native-design-system-atoms';
+import { AtomicText, AtomicIcon } from '@umituz/react-native-design-system-atoms';
 import { useAppDesignTokens } from '@umituz/react-native-design-system-theme';
-import { Ionicons } from '@expo/vector-icons';
 import { HapticService } from '@umituz/react-native-haptics';
 import type { SwipeActionConfig } from '../../domain/entities/SwipeAction';
 import { SwipeActionUtils } from '../../domain/entities/SwipeAction';
@@ -68,24 +67,6 @@ export const SwipeActionButton: React.FC<SwipeActionButtonProps> = ({
   const customColor = action.color;
   const enableHaptics = action.enableHaptics !== false;
 
-  // Map Lucide icon names to Ionicons names
-  const iconMap: Record<string, string> = {
-    'Trash2': 'trash-outline',
-    'Archive': 'archive-outline',
-    'Pencil': 'create-outline',
-    'Share2': 'share-outline',
-    'Heart': 'heart-outline',
-    'MoveHorizontal': 'ellipsis-horizontal-outline',
-  };
-  
-  // Convert iconName to string and map to Ionicons name
-  const icon = iconMap[String(iconName)] || 'ellipsis-horizontal-outline';
-  
-  /* eslint-disable-next-line no-console */
-  if (__DEV__ && !iconMap[String(iconName)]) {
-    console.warn(`[SwipeActionButton] Icon mapping not found for: ${iconName}, using default`);
-  }
-
   // Get background color from theme or custom
   const backgroundColor = customColor || (colorKey ? (tokens.colors[colorKey as keyof typeof tokens.colors] as string) : tokens.colors.primary);
 
@@ -123,10 +104,10 @@ export const SwipeActionButton: React.FC<SwipeActionButtonProps> = ({
       activeOpacity={0.7}
     >
       <View style={styles.content}>
-        <Ionicons
-          name={icon as any}
-          size={24}
-          color="#FFFFFF"
+        <AtomicIcon
+          name={iconName}
+          size="md"
+          customColor="#FFFFFF"
         />
         <AtomicText
           type="bodySmall"
